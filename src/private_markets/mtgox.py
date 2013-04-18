@@ -39,7 +39,7 @@ class PrivateMtGox(Market):
         super().__init__()
         self.key = config.mtgox_key
         self.secret = config.mtgox_secret
-        self.currency = "EUR"
+        self.currency = "USD"
         self.get_info()
 
     def _create_nonce(self):
@@ -144,7 +144,7 @@ class PrivateMtGox(Market):
             self.btc_balance = self._from_int_amount(int(response[
                                                      "return"]["Wallets"]["BTC"]["Balance"]["value_int"]))
             self.eur_balance = self._from_int_price(int(response[
-                                                    "return"]["Wallets"]["EUR"]["Balance"]["value_int"]))
+                                                    "return"]["Wallets"]["USD"]["Balance"]["value_int"]))
             return 1
         return None
 

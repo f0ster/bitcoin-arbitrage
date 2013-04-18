@@ -27,6 +27,7 @@ class MtGoxUSD(Market):
             logging.error("%s - fetched data error" % (self.name))
 
     def sort_and_format(self, l, reverse=False):
+        #study if alternative sorting algorithm is better? (prob not)
         l.sort(key=lambda x: float(x["price"]), reverse=reverse)
         r = []
         for i in l:
